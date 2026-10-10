@@ -1,174 +1,606 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mesby Limited | Vehicle Tracking, Dash Cameras & Auto Keys in Eldoret</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0d2a4a;--navy2:#123a66;--gold:#f0a800;--green:#2f7d32;--bg:#f6f8fb;--card:#fff;--text:#14202e;--muted:#55657a;--line:#dbe3ee;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1524;--card:#10223a;--text:#e8eef6;--muted:#9fb1c6;--line:#1f3555}}
-:root[data-theme="dark"]{--bg:#0a1524;--card:#10223a;--text:#e8eef6;--muted:#9fb1c6;--line:#1f3555}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.6 Barlow,system-ui,sans-serif}
-h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;line-height:1.05;margin:0}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:#000;color:#fff}
-.logo{display:flex;align-items:center;gap:10px}
-.logo span{font:700 1.5rem 'Barlow Condensed',sans-serif;letter-spacing:.06em;color:var(--gold);white-space:nowrap}
-@media(max-width:400px){.logo span{font-size:1.2rem}}
-.logo img{height:64px;width:auto;display:block}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font:700 1.6rem 'Barlow Condensed',sans-serif;letter-spacing:.04em;color:var(--gold);text-decoration:none}
-nav a{margin-left:18px;text-decoration:none;font-weight:500;font-size:.95rem}
-@media(max-width:640px){nav a.hide{display:none}}
-.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:inherit}
-.gold{background:var(--gold);color:#101820}
-.ghost{border-color:#fff;color:#fff}
-.hero{background:linear-gradient(120deg,var(--navy) 60%,var(--navy2));color:#fff;padding:56px 0 64px}
-.hero .wrap{display:grid;gap:36px;grid-template-columns:1.1fr .9fr;align-items:center}
-@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700}
-.hero p{max-width:46ch;color:#c9d7e8;font-size:1.1rem}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.panel{background:#0a2039;border:1px solid #27476f;border-radius:10px;padding:14px}
-.panel .bar{display:flex;justify-content:space-between;font-size:.85rem;color:#9fb6d2;margin-bottom:8px}
-.live{color:#6fdc78;font-weight:600}
-.alerts{display:grid;gap:6px;margin-top:10px;font-size:.88rem}
-.alerts div{background:#12325a;border-left:3px solid var(--gold);padding:6px 10px;border-radius:4px}
-.pulse{animation:p 1.6s ease-out infinite}
-@keyframes p{0%{r:5;opacity:1}100%{r:16;opacity:0}}
-@media(prefers-reduced-motion:reduce){.pulse{animation:none}}
-section{padding:60px 0}
-h2{font-size:clamp(2rem,5vw,2.9rem);color:var(--navy)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:#fff}}
-:root[data-theme="dark"] h2{color:#fff}
-.lead{color:var(--muted);max-width:56ch;margin:8px 0 30px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px}
-.card h3{font-size:1.5rem;margin-bottom:6px}
-.card p{margin:0;color:var(--muted);font-size:.95rem}
-.ic{width:38px;height:38px;border-radius:8px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:700;margin-bottom:12px;font-family:'Barlow Condensed'}
-.prod{display:grid;gap:20px;grid-template-columns:1fr 1fr}
-@media(max-width:760px){.prod{grid-template-columns:1fr}}
-.prod .card{border-top:6px solid var(--gold)}
-.prod .card.g{border-top-color:var(--green)}
-.prod ul{padding-left:18px;margin:12px 0;color:var(--text)}
-.prod li{margin:4px 0}
-.specs{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
-.who{display:flex;flex-wrap:wrap;gap:10px}
-.who span{background:var(--card);border:1px solid var(--line);padding:8px 16px;border-radius:99px;font-weight:500}
-.contact{background:var(--navy);color:#fff}
-.contact h2{color:#fff}
-.cgrid{display:grid;gap:32px;grid-template-columns:1fr 1fr}
-@media(max-width:760px){.cgrid{grid-template-columns:1fr}}
-.contact a.line{display:block;margin:8px 0;font-size:1.2rem;text-decoration:none}
-form{display:grid;gap:10px}
-label{font-size:.9rem;color:#c9d7e8}
-input,select,textarea{width:100%;padding:11px;border-radius:6px;border:1px solid #27476f;background:#0a2039;color:#fff;font:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.ig{margin:8px 0;background:linear-gradient(45deg,#f09433,#dc2743 55%,#bc1888);border-color:transparent}
-.mapcard{display:block;margin-top:18px;text-decoration:none;max-width:360px}
-.mapcard svg{border-radius:8px;border:1px solid #27476f;display:block}
-footer{background:#081b31;color:#8ea3bd;text-align:center;padding:18px;font-size:.85rem}
-.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25d366;color:#053b1a;font-weight:700;padding:13px 18px;border-radius:99px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:6}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mesby Limited | Vehicle Tracking, Dash Cameras & Auto Keys in Eldoret</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:#0d2a4a;
+      --navy2:#123a66;
+      --gold:#f0a800;
+      --green:#2f7d32;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#14202e;
+      --muted:#55657a;
+      --line:#dbe3ee;
+      --shadow:0 18px 38px rgba(13,42,74,.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:#0a1524;
+        --card:#10223a;
+        --text:#e8eef6;
+        --muted:#9fb1c6;
+        --line:#1f3555;
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg:#0a1524;
+      --card:#10223a;
+      --text:#e8eef6;
+      --muted:#9fb1c6;
+      --line:#1f3555;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));
+    }
+
+    * { box-sizing:border-box; }
+
+    body {
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font:400 1rem/1.6 "Barlow", system-ui, sans-serif;
+    }
+
+    h1, h2, h3 {
+      margin:0;
+      font-family:"Barlow Condensed", Impact, sans-serif;
+      line-height:1.05;
+    }
+
+    a { color:inherit; }
+
+    .wrap {
+      max-width:1080px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    header {
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:#000;
+      color:#fff;
+    }
+
+    header .wrap {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:72px;
+    }
+
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:var(--gold);
+      font:700 1.6rem/1 "Barlow Condensed", sans-serif;
+      letter-spacing:.04em;
+      white-space:nowrap;
+    }
+
+    .logo-mark {
+      width:40px;
+      height:40px;
+      border-radius:8px;
+      background:var(--gold);
+      color:#101820;
+      display:grid;
+      place-items:center;
+      font-size:1.1rem;
+      font-weight:700;
+    }
+
+    nav { display:flex; align-items:center; }
+    nav a {
+      margin-left:18px;
+      text-decoration:none;
+      font-weight:500;
+      font-size:.95rem;
+      color:#fff;
+    }
+
+    @media (max-width:640px) {
+      nav a.hide { display:none; }
+    }
+
+    .btn {
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:6px;
+      font-weight:600;
+      text-decoration:none;
+      border:2px solid transparent;
+      cursor:pointer;
+      font-size:1rem;
+      font-family:inherit;
+      transition:transform .2s ease, opacity .2s ease;
+    }
+
+    .btn:hover { transform:translateY(-1px); }
+
+    .gold { background:var(--gold); color:#101820; }
+    .ghost {
+      border-color:#fff;
+      color:#fff;
+      background:transparent;
+    }
+
+    .hero {
+      background:linear-gradient(120deg, var(--navy) 60%, var(--navy2));
+      color:#fff;
+      padding:56px 0 64px;
+    }
+
+    .hero .wrap {
+      display:grid;
+      gap:36px;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+    }
+
+    @media (max-width:820px) {
+      .hero .wrap { grid-template-columns:1fr; }
+    }
+
+    .hero h1 {
+      font-size:clamp(2.6rem, 7vw, 4.6rem);
+      font-weight:700;
+    }
+
+    .hero p {
+      max-width:46ch;
+      color:#c9d7e8;
+      font-size:1.1rem;
+    }
+
+    .cta {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .panel {
+      background:#0a2039;
+      border:1px solid #27476f;
+      border-radius:10px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .panel .bar {
+      display:flex;
+      justify-content:space-between;
+      font-size:.85rem;
+      color:#9fb6d2;
+      margin-bottom:8px;
+    }
+
+    .live { color:#6fdc78; font-weight:600; }
+
+    .alerts {
+      display:grid;
+      gap:6px;
+      margin-top:10px;
+      font-size:.88rem;
+    }
+
+    .alerts div {
+      background:#12325a;
+      border-left:3px solid var(--gold);
+      padding:6px 10px;
+      border-radius:4px;
+    }
+
+    .pulse { animation:p 1.6s ease-out infinite; }
+
+    @keyframes p {
+      0% { r:5; opacity:1; }
+      100% { r:16; opacity:0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse { animation:none; }
+    }
+
+    section {
+      padding:60px 0;
+    }
+
+    h2 {
+      font-size:clamp(2rem, 5vw, 2.9rem);
+      color:var(--navy);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) h2 { color:#fff; }
+    }
+
+    :root[data-theme="dark"] h2 { color:#fff; }
+
+    .lead {
+      color:var(--muted);
+      max-width:56ch;
+      margin:8px 0 30px;
+    }
+
+    .grid {
+      display:grid;
+      gap:16px;
+      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .card {
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:20px;
+      box-shadow:0 10px 24px rgba(20,32,46,.04);
+    }
+
+    .card h3 {
+      font-size:1.5rem;
+      margin-bottom:6px;
+    }
+
+    .card p {
+      margin:0;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .ic {
+      width:38px;
+      height:38px;
+      border-radius:8px;
+      background:var(--navy);
+      color:var(--gold);
+      display:grid;
+      place-items:center;
+      font-weight:700;
+      margin-bottom:12px;
+      font-family:"Barlow Condensed", sans-serif;
+    }
+
+    .prod {
+      display:grid;
+      gap:20px;
+      grid-template-columns:1fr 1fr;
+    }
+
+    @media (max-width:760px) {
+      .prod { grid-template-columns:1fr; }
+    }
+
+    .prod .card { border-top:6px solid var(--gold); }
+    .prod .card.g { border-top-color:var(--green); }
+
+    .prod ul {
+      padding-left:18px;
+      margin:12px 0;
+      color:var(--text);
+    }
+
+    .prod li { margin:4px 0; }
+
+    .specs {
+      font-size:.88rem;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      padding-top:10px;
+    }
+
+    .who {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .who span {
+      background:var(--card);
+      border:1px solid var(--line);
+      padding:8px 16px;
+      border-radius:99px;
+      font-weight:500;
+    }
+
+    .contact {
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .contact h2 { color:#fff; }
+
+    .cgrid {
+      display:grid;
+      gap:32px;
+      grid-template-columns:1fr 1fr;
+    }
+
+    @media (max-width:760px) {
+      .cgrid { grid-template-columns:1fr; }
+    }
+
+    .contact a.line {
+      display:block;
+      margin:8px 0;
+      font-size:1.2rem;
+      text-decoration:none;
+      color:#fff;
+    }
+
+    form {
+      display:grid;
+      gap:10px;
+    }
+
+    label {
+      font-size:.9rem;
+      color:#c9d7e8;
+      display:block;
+      margin-bottom:6px;
+    }
+
+    input, select, textarea {
+      width:100%;
+      padding:11px;
+      border-radius:6px;
+      border:1px solid #27476f;
+      background:#0a2039;
+      color:#fff;
+      font:inherit;
+    }
+
+    :focus-visible {
+      outline:3px solid var(--gold);
+      outline-offset:2px;
+    }
+
+    .ig {
+      margin:8px 0;
+      background:linear-gradient(45deg, #f09433, #dc2743 55%, #bc1888);
+      border-color:transparent;
+    }
+
+    .mapcard {
+      display:block;
+      margin-top:18px;
+      text-decoration:none;
+      max-width:360px;
+    }
+
+    .mapcard svg {
+      border-radius:8px;
+      border:1px solid #27476f;
+      display:block;
+    }
+
+    footer {
+      background:#081b31;
+      color:#8ea3bd;
+      text-align:center;
+      padding:18px;
+      font-size:.85rem;
+    }
+
+    .wa {
+      position:fixed;
+      right:16px;
+      bottom:calc(16px + env(safe-area-inset-bottom, 0px));
+      background:#25d366;
+      color:#053b1a;
+      font-weight:700;
+      padding:13px 18px;
+      border-radius:99px;
+      text-decoration:none;
+      box-shadow:0 10px 22px rgba(16, 94, 52, .25);
+      z-index:25;
+    }
+  </style>
 </head>
 <body>
-<header><div class="wrap">
-<a class="logo" href="#top" aria-label="Mesby home"><img src="data:image/jpeg;base64,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" alt="Mesby logo"><span>MESBY LIMITED</span></a>
-<nav><a class="hide" href="#services">Services</a><a class="hide" href="#products">Products</a><a href="#contact">Contact</a></nav>
-</div></header>
+  <header>
+    <div class="wrap">
+      <a class="logo" href="#top" aria-label="Mesby home">
+        <span class="logo-mark">M</span>
+        <span>MESBY</span>
+      </a>
+      <nav>
+        <a class="hide" href="#services">Services</a>
+        <a class="hide" href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<main id="top">
-<div class="hero"><div class="wrap">
-<div>
-<h1>Secure your vehicles. Grow your business.</h1>
-<p>GPS tracking, AI dash cameras and auto key services for fleets, schools and car owners in Eldoret and across Kenya.</p>
-<div class="cta">
-<a class="btn gold" href="tel:+254720300682">Call 0720 300 682</a>
-<a class="btn ghost" href="https://wa.me/254720300682" target="_blank" rel="noopener">Chat on WhatsApp</a>
-</div>
-</div>
-<div class="panel" aria-label="Example of live tracking view">
-<div class="bar"><span>Truck KDA 123X</span><span class="live">● Live</span></div>
-<svg viewBox="0 0 320 150" width="100%" role="img" aria-label="Route map">
-<rect width="320" height="150" rx="6" fill="#0f3356"/>
-<path d="M10 120 C60 110 70 60 130 70 S220 100 250 40 L300 25" fill="none" stroke="#f0a800" stroke-width="3" stroke-dasharray="6 5"/>
-<circle cx="250" cy="40" r="6" fill="#6fdc78"/>
-<circle class="pulse" cx="250" cy="40" r="5" fill="none" stroke="#6fdc78" stroke-width="2"/>
-<circle cx="10" cy="120" r="4" fill="#fff"/>
-</svg>
-<div class="alerts"><div>Geo-fence: left depot, 06:42</div><div>Overspeed alert: 96 km/h</div></div>
-</div>
-</div></div>
+  <main id="top">
+    <div class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Secure your vehicles. Grow your business.</h1>
+          <p>GPS tracking, AI dash cameras and auto key services for fleets, schools and car owners in Eldoret and across Kenya.</p>
+          <div class="cta">
+            <a class="btn gold" href="tel:+254720300682">Call 0720 300 682</a>
+            <a class="btn ghost" href="https://wa.me/254720300682" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
 
-<section id="services"><div class="wrap">
-<h2>What we do</h2>
-<p class="lead">One partner for tracking, cameras, keys and vehicle security.</p>
-<div class="grid">
-<div class="card"><div class="ic">GPS</div><h3>Fleet tracking</h3><p>Real-time location, history playback, geo-fencing, alerts and reports.</p></div>
-<div class="card"><div class="ic">CAM</div><h3>Dash cameras</h3><p>AI cameras for recording, driver safety, evidence and fleet monitoring.</p></div>
-<div class="card"><div class="ic">ENG</div><h3>Engine control</h3><p>Stop or start an engine remotely to cut misuse and improve security.</p></div>
-<div class="card"><div class="ic">KEY</div><h3>Key programming</h3><p>Lost keys, new keys, smart keys and remotes for most vehicles.</p></div>
-<div class="card"><div class="ic">ECU</div><h3>Diagnostics</h3><p>Full system scan, fault code reading and ECU diagnostics.</p></div>
-<div class="card"><div class="ic">SEC</div><h3>Immobilizer & security</h3><p>Immobilizers, anti-theft systems and vehicle security upgrades.</p></div>
-</div></div></section>
+        <div class="panel" aria-label="Example of live tracking view">
+          <div class="bar"><span>Truck KDA 123X</span><span class="live">● Live</span></div>
+          <svg viewBox="0 0 320 150" width="100%" role="img" aria-label="Route map">
+            <rect width="320" height="150" rx="6" fill="#0f3356"></rect>
+            <path d="M10 120 C60 110 70 60 130 70 S220 100 250 40 L300 25" fill="none" stroke="#f0a800" stroke-width="3" stroke-dasharray="6 5"></path>
+            <circle cx="250" cy="40" r="6" fill="#6fdc78"></circle>
+            <circle class="pulse" cx="250" cy="40" r="5" fill="none" stroke="#6fdc78" stroke-width="2"></circle>
+            <circle cx="10" cy="120" r="4" fill="#fff"></circle>
+          </svg>
+          <div class="alerts">
+            <div>Geo-fence: left depot, 06:42</div>
+            <div>Overspeed alert: 96 km/h</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<section id="products" style="padding-top:0"><div class="wrap">
-<h2>Our devices</h2>
-<p class="lead">Installed and supported by our team.</p>
-<div class="prod">
-<div class="card"><h3>AI dash camera</h3><p>Smart protection for drivers and fleets.</p>
-<ul><li>Lane departure and forward collision warnings</li><li>Pedestrian and vehicle detection</li><li>Driver fatigue and drowsiness detection</li><li>Night vision, Wi-Fi app, two-way audio</li></ul>
-<div class="specs">1080P / 2K / 4K · 140° view · MicroSD up to 256GB · 12V / 24V</div></div>
-<div class="card g"><h3>Smart GPS vehicle tracker</h3><p>Reliable. Accurate. Real-time control.</p>
-<ul><li>Live location and 12 months of history</li><li>Overspeed, idle, tow and shock alerts</li><li>Remote engine cut-off</li><li>Trip, stop and fuel reports</li></ul>
-<div class="specs">2G/4G · 9-90V DC · Web and mobile app · Easy installation</div></div>
-</div></div></section>
+    <section id="services">
+      <div class="wrap">
+        <h2>What we do</h2>
+        <p class="lead">One partner for tracking, cameras, keys and vehicle security.</p>
+        <div class="grid">
+          <div class="card">
+            <div class="ic">GPS</div>
+            <h3>Fleet tracking</h3>
+            <p>Real-time location, history playback, geo-fencing, alerts and reports.</p>
+          </div>
+          <div class="card">
+            <div class="ic">CAM</div>
+            <h3>Dash cameras</h3>
+            <p>AI cameras for recording, driver safety, evidence and fleet monitoring.</p>
+          </div>
+          <div class="card">
+            <div class="ic">ENG</div>
+            <h3>Engine control</h3>
+            <p>Stop or start an engine remotely to cut misuse and improve security.</p>
+          </div>
+          <div class="card">
+            <div class="ic">KEY</div>
+            <h3>Key programming</h3>
+            <p>Lost keys, new keys, smart keys and remotes for most vehicles.</p>
+          </div>
+          <div class="card">
+            <div class="ic">ECU</div>
+            <h3>Diagnostics</h3>
+            <p>Full system scan, fault code reading and ECU diagnostics.</p>
+          </div>
+          <div class="card">
+            <div class="ic">SEC</div>
+            <h3>Immobilizer & security</h3>
+            <p>Immobilizers, anti-theft systems and vehicle security upgrades.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section style="padding-top:0"><div class="wrap">
-<h2>Who we work with</h2><p class="lead"></p>
-<div class="who"><span>Transport & logistics</span><span>Corporate fleets</span><span>Construction & heavy equipment</span><span>Schools & institutions</span><span>Private car owners</span><span>Car hire & taxis</span></div>
-</div></section>
+    <section id="products" style="padding-top:0">
+      <div class="wrap">
+        <h2>Our devices</h2>
+        <p class="lead">Installed and supported by our team.</p>
+        <div class="prod">
+          <div class="card">
+            <h3>AI dash camera</h3>
+            <p>Smart protection for drivers and fleets.</p>
+            <ul>
+              <li>Lane departure and forward collision warnings</li>
+              <li>Pedestrian and vehicle detection</li>
+              <li>Driver fatigue and drowsiness detection</li>
+              <li>Night vision, Wi-Fi app, two-way audio</li>
+            </ul>
+            <div class="specs">1080P / 2K / 4K · 140° view · MicroSD up to 256GB · 12V / 24V</div>
+          </div>
 
-<section class="contact" id="contact"><div class="wrap cgrid">
-<div>
-<h2>Get a quote</h2>
-<p style="color:#c9d7e8">Tell us what you need. We reply on WhatsApp.</p>
-<a class="line" href="tel:+254720300682">0720 300 682</a>
-<a class="line" href="mailto:mesbyltd@gmail.com">mesbyltd@gmail.com</a>
-<a class="btn ghost ig" href="https://www.instagram.com/mesbyltd" target="_blank" rel="noopener">Follow us on Instagram</a>
-<span class="line">Eldoret, Kenya</span>
-<a class="mapcard" href="https://maps.app.goo.gl/UvG9vTe99s1yiKgq8" target="_blank" rel="noopener">
-<svg viewBox="0 0 320 120" width="100%" role="img" aria-label="Map of Eldoret">
-<rect width="320" height="120" fill="#0f3356"/>
-<path d="M0 80 L320 60 M90 0 L120 120 M200 0 L180 120 M0 30 L320 40" stroke="#27476f" stroke-width="6" fill="none"/>
-<path d="M160 88 C130 60 132 36 160 30 C188 36 190 60 160 88Z" fill="#f0a800"/>
-<circle cx="160" cy="48" r="7" fill="#0d2a4a"/>
-</svg>
-<span class="btn gold" style="margin-top:10px">Open in Google Maps</span>
-</a>
-</div>
-<form id="f">
-<div><label for="n">Your name/company name</label><input id="n" required></div>
-<div><label for="s">Service</label><select id="s"><option>Fleet tracking</option><option>Dash camera</option><option>Car key programming</option><option>Diagnostics</option><option>Immobilizer / security</option></select></div>
-<div><label for="m">Details (number of vehicles, car model)</label><textarea id="m" rows="3"></textarea></div>
-<button class="btn gold" type="submit">Send on WhatsApp</button>
-</form>
-</div></section>
-</main>
-<footer>© Mesby Limited · Eldoret, Kenya · <a href="https://www.instagram.com/mesbyltd" target="_blank" rel="noopener">@mesbyltd</a></footer>
-<a class="wa" href="https://wa.me/254720300682" target="_blank" rel="noopener">WhatsApp</a>
-<script>
-document.getElementById('f').addEventListener('submit',function(e){
-e.preventDefault();
-var t='Hello Mesby, I am '+document.getElementById('n').value+'. I need: '+document.getElementById('s').value+'. '+document.getElementById('m').value;
-window.open('https://wa.me/254720300682?text='+encodeURIComponent(t),'_blank');
-});
-</script>
+          <div class="card g">
+            <h3>Smart GPS vehicle tracker</h3>
+            <p>Reliable. Accurate. Real-time control.</p>
+            <ul>
+              <li>Live location and 12 months of history</li>
+              <li>Overspeed, idle, tow and shock alerts</li>
+              <li>Remote engine cut-off</li>
+              <li>Trip, stop and fuel reports</li>
+            </ul>
+            <div class="specs">2G/4G · 9-90V DC · Web and mobile app · Easy installation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <h2>Who we work with</h2>
+        <p class="lead"></p>
+        <div class="who">
+          <span>Transport & logistics</span>
+          <span>Corporate fleets</span>
+          <span>Construction & heavy equipment</span>
+          <span>Schools & institutions</span>
+          <span>Private car owners</span>
+          <span>Car hire services</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap cgrid">
+        <div>
+          <h2>Get a quote</h2>
+          <p style="color:#c9d7e8">Tell us what you need. We reply on WhatsApp.</p>
+          <a class="line" href="tel:+254720300682">0720 300 682</a>
+          <a class="line" href="mailto:mesbyltd@gmail.com">mesbyltd@gmail.com</a>
+          <a class="btn ghost ig" href="https://www.instagram.com/mesbyltd" target="_blank" rel="noopener">Follow us on Instagram</a>
+          <span class="line">Eldoret, Kenya</span>
+
+          <a class="mapcard" href="https://maps.app.goo.gl/UvG9vTe99s1yiKgq8" target="_blank" rel="noopener">
+            <svg viewBox="0 0 320 120" width="100%" role="img" aria-label="Map of Eldoret">
+              <rect width="320" height="120" fill="#0f3356"></rect>
+              <path d="M0 80 L320 60 M90 0 L120 120 M200 0 L180 120 M0 30 L320 40" stroke="#27476f" stroke-width="6" fill="none"></path>
+              <path d="M160 88 C130 60 132 36 160 30 C188 36 190 60 160 88Z" fill="#f0a800"></path>
+              <circle cx="160" cy="48" r="7" fill="#0d2a4a"></circle>
+            </svg>
+            <span class="btn gold" style="margin-top:10px; display:inline-block;">Open in Google Maps</span>
+          </a>
+        </div>
+
+        <form id="f">
+          <div>
+            <label for="n">Your name/company name</label>
+            <input id="n" required>
+          </div>
+          <div>
+            <label for="s">Service</label>
+            <select id="s">
+              <option>Fleet tracking</option>
+              <option>Dash camera</option>
+              <option>Car key programming</option>
+              <option>Diagnostics</option>
+              <option>Immobilizer / security</option>
+            </select>
+          </div>
+          <div>
+            <label for="m">Details (number of vehicles, car model)</label>
+            <textarea id="m" rows="3"></textarea>
+          </div>
+          <button class="btn gold" type="submit">Send on WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>© Mesby Limited · Eldoret, Kenya · <a href="https://www.instagram.com/mesbyltd" target="_blank" rel="noopener">@mesbyltd</a></footer>
+  <a class="wa" href="https://wa.me/254720300682" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script>
+    document.getElementById('f').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('n').value;
+      var service = document.getElementById('s').value;
+      var details = document.getElementById('m').value;
+      var text = 'Hello Mesby, I am ' + name + '. I need: ' + service + '. ' + details;
+      window.open('https://wa.me/254720300682?text=' + encodeURIComponent(text), '_blank');
+    });
+  </script>
 </body>
 </html>
